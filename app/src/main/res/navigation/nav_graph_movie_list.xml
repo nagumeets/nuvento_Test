@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_movie_list"
+    app:startDestination="@id/fragment_movie_list">
+
+    <fragment
+        android:id="@+id/fragment_movie_list"
+        android:name="com.nuvento_test.ui.MovieListFragment"
+        tools:layout="@layout/fragment_movie_list">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="year"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_movie_to_details"
+            app:destination="@id/nav_graph_movie_details">
+            <argument
+                android:name="id"
+                app:argType="string" />
+            <argument
+                android:name="title"
+                app:argType="string" />
+            <argument
+                android:name="image"
+                app:argType="string" />
+            <argument
+                android:name="year"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <include app:graph="@navigation/nav_graph_movie_details" />
+</navigation>
